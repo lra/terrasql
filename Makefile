@@ -1,2 +1,2 @@
-test-mdl:
-	circleci local execute --job=mdl
+circleci-markdownlint:
+	circleci local execute --job=markdownlint

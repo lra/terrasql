@@ -1,15 +1,16 @@
 version: 2
 jobs:
 
-  mdl:
+  markdownlint:
     docker:
-      - image: rsrchboy/mdl
+      - image: circleci/node
     steps:
       - checkout
-      - run: mdl .
+      - run: npm install
+      - run: npm run markdownlint
 
 workflows:
   version: 2
   terrasql:
     jobs:
-      - mdl
+      - markdownlint
