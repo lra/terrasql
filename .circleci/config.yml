@@ -1,0 +1,15 @@
+version: 2
+jobs:
+
+  mdl:
+    docker:
+      - image: rsrchboy/mdl
+    steps:
+      - checkout
+      - run: mdl .
+
+workflows:
+  version: 2
+  terrasql:
+    jobs:
+      - mdl
