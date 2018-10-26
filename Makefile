@@ -3,3 +3,6 @@ clean:
 
 circleci-markdownlint:
 	circleci local execute --job=markdownlint
+
+circleci-tslint:
+	circleci local execute --job=tslint
