@@ -9,8 +9,17 @@ jobs:
       - run: npm install
       - run: npm run markdownlint
 
+  tslint:
+    docker:
+      - image: circleci/node
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run tslint
+
 workflows:
   version: 2
   terrasql:
     jobs:
       - markdownlint
+      - tslint

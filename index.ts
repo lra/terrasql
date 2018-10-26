@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-let doc:string = `TerraSQL.
+const doc: string = `TerraSQL.
 
 Diff tool for SQL tables, like terraform.
 
@@ -18,6 +18,7 @@ Options:
   --version     Show version.
 `
 
-import {docopt} from 'docopt'
+import {docopt} from "docopt"
+import * as pjson from "pjson"
 
-console.log(docopt(doc, { version: '0.0.1' }))
+console.log(docopt(doc, { version: pjson.version }))

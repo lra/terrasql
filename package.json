@@ -4,9 +4,9 @@
   "description": "Diff tool for SQL tables, like terraform.",
   "main": "index.js",
   "scripts": {
-    "circleci-mdl": "circleci local execute --job=mdl",
     "build": "tsc",
-    "markdownlint": "markdownlint --ignore node_modules/ **/*.md"
+    "markdownlint": "markdownlint --ignore node_modules/ **/*.md",
+    "tslint": "tslint *.ts"
   },
   "repository": {
     "type": "git",
@@ -31,12 +31,14 @@
     "terrasql": "./index.js"
   },
   "dependencies": {
-    "docopt": "^0.6.2"
+    "docopt": "^0.6.2",
+    "pjson": "^1.0.9"
   },
   "devDependencies": {
+    "@types/docopt": "^0.6.31",
     "markdownlint-cli": "^0.13.0",
-    "typescript": "^3.1.3",
-    "@types/docopt": "^0.6.31"
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.3"
   },
   "files": [
     "/index.js"
