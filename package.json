@@ -1,6 +1,6 @@
 {
   "name": "terrasql",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Diff tool for SQL tables, like terraform.",
   "main": "index.js",
   "scripts": {
