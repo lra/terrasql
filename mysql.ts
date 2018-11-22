@@ -1,14 +1,15 @@
 import * as mysql from "mysql"
 
 export default class MySQL {
-  host: string
-  port: number
-  user: string
-  password: string
-  database: string
-  connection: mysql.Connection
+  public connection: mysql.Connection
 
-  constructor(user:string, password:string, database:string, host:string = 'localhost', port:number = 3306)  {
+  private host: string
+  private port: number
+  private user: string
+  private password: string
+  private database: string
+
+  constructor(user: string, password: string, database: string, host: string = "localhost", port: number = 3306)  {
     this.host = host
     this.port = port
     this.user = user
@@ -16,12 +17,12 @@ export default class MySQL {
     this.database = database
 
     this.connection = mysql.createConnection({
-        insecureAuth: true,
+        database: this.database,
         host: this.host,
+        insecureAuth: true,
+        password: this.password,
         port: this.port,
         user: this.user,
-        password: this.password,
-        database: this.database
     })
   }
 }
