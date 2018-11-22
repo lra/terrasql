@@ -8,7 +8,7 @@ Diff tool for SQL tables, like terraform.
 
 ```bash
 # Clean up any previous state
-make clean
+npm run clean
 
 # Install dependencies locally
 npm install

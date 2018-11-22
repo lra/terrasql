@@ -22,6 +22,7 @@ import {docopt} from "docopt"
 import * as pjson from "pjson"
 
 import MySQL from "./mysql"
+import { sleep } from "./utils"
 
 console.log(docopt(doc, { version: pjson.version }))
 
@@ -29,7 +30,6 @@ function respondToPing(error) {
   if (error) {
     throw error
   }
-  console.log("Server responded to ping")
 }
 
 function displayRowsAndFields(error, results, fields) {
