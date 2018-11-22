@@ -21,4 +21,26 @@ Options:
 import {docopt} from "docopt"
 import * as pjson from "pjson"
 
+import MySQL from "./mysql"
+
 console.log(docopt(doc, { version: pjson.version }))
+
+function respondToPing(error) {
+  if (error) throw error
+  console.log('Server responded to ping')
+}
+
+function displayRowsAndFields(error, results, fields) {
+  if (error) throw error;
+  console.log(results)
+  console.log(fields)
+}
+
+function throwError(error) {
+  if (error) throw error
+}
+
+let mysql:MySQL = new MySQL('analogue', '', 'analogue')
+mysql.connection.ping(respondToPing)
+mysql.connection.query('SELECT NOW()', displayRowsAndFields)
+mysql.connection.end(throwError)
