@@ -7,9 +7,18 @@ Diff tool for SQL tables, like terraform.
 ## Contribute
 
 ```bash
+# Clean up any previous state
 make clean
+
+# Install dependencies locally
 npm install
+
+# Transbuild the TypeScript code into JavaScript
 npm run build
+
+# Symlink the terrasql source to a local binary
 npm link
+
+# Run it
 terrasql
 ```
